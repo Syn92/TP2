@@ -24,13 +24,15 @@ public:
 	void modifierNom(const string& nom);
 	void modifierReference(int reference);
 	void modifierPrix(double prix);
-
+	friend bool operator> (const Produit& produit, const Produit& produit2);
+	friend bool operator< (const Produit& produit, const Produit& produit2);
+	friend bool operator== (const Produit& produit, const Produit& produit2);
 	// TODO: Ajouter la surcharge de l'op�rateur >
 	// TODO: Ajouter la surcharge de l'op�rateur <
 	// TODO: Ajouter la surcharge de l'operateur ==
-	
+	friend ostream& operator>> (ostream& o,const Produit& produit);
 	// TODO: Ajouter la surcharge de l'opérateur >>
-
+	friend ostream& operator<< (ostream& o,const Produit& produit);
     // TODO: Cette methode doit �tre remplac�e par la surcharge de l'op�rateur <<
 	void afficher() const;
    

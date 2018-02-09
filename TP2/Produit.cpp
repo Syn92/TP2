@@ -45,6 +45,34 @@ void Produit::modifierPrix(double prix)
 	prix_ = prix;
 }
 
+bool operator> (const Produit& produit,const Produit& produit2) {
+	bool reponse = false;
+	if (produit.obtenirPrix() > produit2.obtenirPrix())
+	{
+		reponse = true;
+	}
+	return reponse;
+}
+bool operator< (const Produit& produit, const Produit& produit2) {
+	bool reponse = false;
+	if (produit.obtenirPrix() < produit2.obtenirPrix())
+	{
+		reponse = true;
+	}
+	return reponse;
+}
+bool operator== (const Produit& produit, const Produit& produit2) {
+	bool reponse = false;
+	if (produit.obtenirPrix() == produit2.obtenirPrix())
+	{
+		reponse = true;
+	}
+	return reponse;
+}
+ ostream& operator<< (ostream& o,const Produit& produit) {
+	produit.afficher();
+}
+
 void Produit::afficher() const
 {
 	cout << "nom : " << nom_ 

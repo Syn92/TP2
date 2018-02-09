@@ -67,6 +67,15 @@ void Rayon::ajouterProduit(Produit * produit)
 	}
 }
 
+ostream& operator<<(ostream &oss, const Rayon &rayon) {
+	oss << "Le rayon " << rayon.categorie_ << ": " << endl;
+	for (int i = 0; i < rayon.nombreProduits_; i++)
+	{
+		oss << "----> " << rayon.tousProduits_[i]->afficher() << endl;;
+	}
+	
+}
+
 void Rayon::afficher() const
 {
 	cout << "Le rayon " << categorie_ << ": " << endl;

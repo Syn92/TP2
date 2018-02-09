@@ -24,9 +24,9 @@ public:
 	void modifierNom(const string& nom);
 	void modifierReference(int reference);
 	void modifierPrix(double prix);
-	friend bool operator> (const Produit& produit, const Produit& produit2);
-	friend bool operator< (const Produit& produit, const Produit& produit2);
-	friend bool operator== (const Produit& produit, const Produit& produit2);
+	bool operator> (const Produit& produit);
+	bool operator< (const Produit& produit);
+	bool operator== (const Produit& produit);
 	// TODO: Ajouter la surcharge de l'op�rateur >
 	// TODO: Ajouter la surcharge de l'op�rateur <
 	// TODO: Ajouter la surcharge de l'operateur ==

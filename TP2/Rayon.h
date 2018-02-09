@@ -32,13 +32,15 @@ public:
 	int compterDoublons(const Produit& produit);
 
 	// TODO: Cette methode doit être remplacee par la surcharge de l'opérateur <<
+	friend ostream& operator<<(ostream &oss, const Rayon &rayon);
 	void afficher() const;
 
 private:
 	string categorie_;
 
 	// TODO: Remplacer ces attributs par un vecteur de la STL
-	Produit ** tousProduits_;
+	//Produit ** tousProduits_;
+	vector<Produit*> tousProduits_;
 	int capaciteProduits_;
 	int nombreProduits_;
 

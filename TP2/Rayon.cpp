@@ -14,11 +14,11 @@ Rayon::Rayon(const string& cat) :
 {
 }
 
-Rayon::~Rayon()
+/*Rayon::~Rayon()
 {
 	if (tousProduits_ != nullptr)
 		delete[] tousProduits_;
-}
+}*/
 
 // Methodes d'acces
 string Rayon::obtenirCategorie() const
@@ -26,7 +26,7 @@ string Rayon::obtenirCategorie() const
 	return categorie_;
 }
 
-Produit ** Rayon::obtenirTousProduits() const
+vector<Produit*> Rayon::obtenirTousProduits() const
 {
 	return tousProduits_;
 }
@@ -42,7 +42,7 @@ void Rayon::modifierCategorie(const string& cat)
 	categorie_ = cat;
 }
 
-void Rayon::ajouterProduit(Produit * produit)
+/*void Rayon::ajouterProduit(Produit * produit)
 {
 	if (tousProduits_ != nullptr)
 	{
@@ -65,15 +65,40 @@ void Rayon::ajouterProduit(Produit * produit)
 		tousProduits_ = new Produit*[capaciteProduits_];
 		tousProduits_[nombreProduits_++] = produit;
 	}
+}*/
+int Rayon::compterDoublons(const Produit& produit) {
+	int occurence = 0;
+	for (int i = 0; i < nombreProduits_; i++)
+	{
+		if ((*tousProduits_[i]) == produit)
+			occurence++;
+	}
+}
+Rayon Rayon::operator+=(Produit *produit) {
+	tousProduits_.push_back(produit);
+	return *this;
+}
+
+void Rayon::operator=(const Rayon &rayon) {
+	categorie_ = rayon.categorie_;
+	capaciteProduits_ = rayon.capaciteProduits_;	
+	tousProduits_.clear();
+	nombreProduits_ = rayon.nombreProduits_;
+	for (int i = 0; i < rayon.nombreProduits_; i++)
+	{
+		tousProduits_.push_back(rayon.tousProduits_[i]);
+	}
+	
 }
 
 ostream& operator<<(ostream &oss, const Rayon &rayon) {
 	oss << "Le rayon " << rayon.categorie_ << ": " << endl;
 	for (int i = 0; i < rayon.nombreProduits_; i++)
 	{
-		oss << "----> " << rayon.tousProduits_[i]->afficher() << endl;;
+		oss << "----> " << rayon.tousProduits_[i]->afficher()
+			<< endl;
 	}
-	
+	return oss;
 }
 
 void Rayon::afficher() const

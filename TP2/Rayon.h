@@ -20,7 +20,7 @@ public:
 	~Rayon();
 
 	string obtenirCategorie() const;
-	Produit ** obtenirTousProduits() const;
+	vector<Produit*> obtenirTousProduits() const;
 	int obtenirCapaciteProduits() const;
 	int obtenirNombreProduits() const;
 
@@ -33,6 +33,8 @@ public:
 
 	// TODO: Cette methode doit être remplacee par la surcharge de l'opérateur <<
 	friend ostream& operator<<(ostream &oss, const Rayon &rayon);
+	Rayon operator+=( Produit *produit);
+	void operator=(const Rayon &rayon);
 	void afficher() const;
 
 private:

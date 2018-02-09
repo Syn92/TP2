@@ -33,13 +33,13 @@ public:
 	// TODO: Implementez la methode qui retourne le produit le plus cher du panier
 	Produit* trouverProduitPlusCher();
 	// TODO: Cette methode doit être remplacée par la surcharge de l'opérateur <<
-	void afficher() const;
+	friend ostream& operator<<(ostream& o, const Panier& p);
 
 private:
 	double totalAPayer_;
 
 	// TODO: Remplacer ces attributs par un vecteur de la STL
-	Produit ** contenuPanier_;
+	vector<Produit*> contenuPanier_;
 	int  nombreContenu_;
 	int capaciteContenu_;
 

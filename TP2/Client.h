@@ -38,6 +38,7 @@ public:
 	void livrerPanier();
 
 	// TODO: Surcharger l'operateur d'affectation =
+	void operator=(const Client& c2);
 	// TODO: Surcharger l'operateur == (client == identifiant)
 
 	// TODO: Surcharger l'operateur == (identifiant == client)

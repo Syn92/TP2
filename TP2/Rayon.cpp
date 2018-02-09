@@ -95,7 +95,7 @@ ostream& operator<<(ostream &oss, const Rayon &rayon) {
 	oss << "Le rayon " << rayon.categorie_ << ": " << endl;
 	for (int i = 0; i < rayon.nombreProduits_; i++)
 	{
-		oss << "----> " << rayon.tousProduits_[i]->afficher()
+		oss << "----> " << rayon.tousProduits_[i]->afficher() //corriger erreur
 			<< endl;
 	}
 	return oss;

@@ -77,7 +77,7 @@ ostream& operator<< (ostream &os, const Produit& produit) {
 }
 ostream& operator>> (ostream& o, const Produit& produit) {
 
-}
+}// à faire
 
 
 void Produit::afficher() const

@@ -104,3 +104,12 @@ void Client::afficherPanier() const
 		cout << "Le panier de " <<prenom_ << " est vide !" << endl;
 	}
 }
+
+void Client::operator=(const Client& c2) {
+	nom_ = c2.nom_;
+	prenom_ = c2.prenom_;
+	identifiant_ = c2.identifiant_;
+	codePostal_ = c2.codePostal_;
+	dateNaissance_ = c2.dateNaissance_;
+	monPanier_ = c2.monPanier_; //modifier cette partie de code.
+}

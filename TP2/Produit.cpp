@@ -69,14 +69,15 @@ bool Produit::operator== (const Produit& produit) {
 	}
 	return reponse;
 }
-ostream& operator<< (ostream &os, const Produit& produit) {
+ostream &operator<<(ostream &os, const Produit& produit) {
 	os << "nom : " << produit.nom_ 
 			  << "\t ref : " << produit.reference_ 
 			  << "\t prix : " << produit.prix_;
 	return os;
 }
-ostream& operator>> (ostream& o, const Produit& produit) {
-
+istream &operator>>(istream &i, Produit &produit) {
+	i >> produit.nom_ >> produit.reference_ >> produit.prix_;
+	return i;
 }// à faire
 
 

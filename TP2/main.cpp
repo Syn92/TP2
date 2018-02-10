@@ -26,9 +26,10 @@ int main()
 {
 	Produit* unProduit = new Produit();
 	// Faire saisir à l'utilisateur les attributs du produit unProduit selon le format de la capture d'écran de l'énoncé
-
+	cout << "entrez un produit : ";
+	cin >> (*unProduit);
 	// Afficher le Produit unProduit
-	
+	cout << unProduit;
 	// Creation de 15 produits
 	Produit * produits[NB_PRODUCTS];
 	double echantillonPrix[NB_PRODUCTS] = { 12.56, 50.0, 34.0, 56.0, 77.0, 91.0, 21.0, 34.0, 88.0, 65.0, 42.0, 72.0, 82.0, 53.0, 68.0 };

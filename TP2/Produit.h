@@ -30,7 +30,7 @@ public:
 	// TODO: Ajouter la surcharge de l'op�rateur >
 	// TODO: Ajouter la surcharge de l'op�rateur <
 	// TODO: Ajouter la surcharge de l'operateur ==
-	friend ostream& operator>> (ostream& o,const Produit& produit);
+	friend istream& operator>> (istream& i,Produit& produit);
 	// TODO: Ajouter la surcharge de l'opérateur >>
 	friend ostream& operator<< (ostream& o,const Produit& produit);
     // TODO: Cette methode doit �tre remplac�e par la surcharge de l'op�rateur <<

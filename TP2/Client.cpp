@@ -105,11 +105,36 @@ void Client::afficherPanier() const
 	}
 }
 
+//Cette méthode écrase les attributs de l’objet de gauche par les attributs de l’objet passé en paramètre.
 void Client::operator=(const Client& c2) {
-	nom_ = c2.nom_;
-	prenom_ = c2.prenom_;
-	identifiant_ = c2.identifiant_;
-	codePostal_ = c2.codePostal_;
-	dateNaissance_ = c2.dateNaissance_;
+	modifierNom(c2.nom_);
+	modifierPrenom(c2.prenom_);
+	modifierIdentifiant(c2.identifiant_);
+	modifierCodePostal(c2.codePostal_);
+	modifierDateNaissance(c2.dateNaissance_);
 	monPanier_ = c2.monPanier_; //modifier cette partie de code.
+}
+
+
+//les deux prochaines fonctions permettent de verifier dans un premier temps si l'identifiant en paramètre
+//correspond à l'identifiant du client. Dans un deuxième temps, si l'idenfiant en question correspond à celui 
+// du client en paramètre.
+bool Client::operator==(int Identifiant) {
+	return identifiant_ == Identifiant;
+}
+
+bool Client::operator==(Client unClient) {
+	return identifiant_ == unClient.obtenirIdentifiant();
+}
+
+ostream& operator<<(ostream& o, const Client& client) {
+	if (client.monPanier_ != nullptr) {
+		for (int i = 0; i < client.monPanier_->obtenirContenuPanier.size(); i++) {
+			cout << "Le panier de" << client.prenom_ << ":" << endl << client.monPanier_->obtenirContenuPanier()[i].obtenirNom() << " " << client.monPanier_->obtenirContenuPanier()[i].obtenirReference() << " " << client.monPanier_->obtenirContenuPanier()[i].obtenirPrix();
+
+		}
+		
+	} else {
+		cout << "Le panier de " << client.prenom_ << " est vide !" << endl; 
+	}
 }

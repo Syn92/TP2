@@ -40,10 +40,12 @@ public:
 	// TODO: Surcharger l'operateur d'affectation =
 	void operator=(const Client& c2);
 	// TODO: Surcharger l'operateur == (client == identifiant)
-
+	bool operator==(int Identifiant);
+	bool operator==(Client unClient);
 	// TODO: Surcharger l'operateur == (identifiant == client)
 	// TODO: Cette methode doit être remplacée par la surcharge de l'opérateur <<
 	void afficherPanier() const;
+	friend ostream& operator<<(ostream& o, const Client& client);
 
 private:
 	string nom_;

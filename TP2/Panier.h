@@ -20,7 +20,7 @@ public:
 	Panier(int capacite);
 	~Panier();
 
-	Produit **  obtenirContenuPanier()const;
+	Produit**  obtenirContenuPanier()const;
 	int obtenirNombreContenu() const;
 	double obtenirTotalApayer() const;
 

@@ -20,7 +20,7 @@ Panier::~Panier()
 }
 
 // methodes d'accès
-Produit **  Panier::obtenirContenuPanier()const
+Produit**  Panier::obtenirContenuPanier()const
 {
 	return contenuPanier_;
 }
